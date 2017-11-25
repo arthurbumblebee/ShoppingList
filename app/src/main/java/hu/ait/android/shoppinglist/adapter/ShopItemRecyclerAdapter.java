@@ -21,6 +21,10 @@ import hu.ait.android.shoppinglist.data.ShopItem;
 
 public class ShopItemRecyclerAdapter extends RecyclerView.Adapter<ShopItemRecyclerAdapter.ViewHolder> {
 
+    private int lastPosition = -1;
+    private List<ShopItem> shopItemList;
+    private Context context;
+
     static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView ivIcon;
         TextView tvItemName;
@@ -39,11 +43,6 @@ public class ShopItemRecyclerAdapter extends RecyclerView.Adapter<ShopItemRecycl
             btnEdit = itemView.findViewById(R.id.btnEdit);
         }
     }
-
-    private int lastPosition = -1;
-
-    private List<ShopItem> shopItemList;
-    private Context context;
 
     public ShopItemRecyclerAdapter(List<ShopItem> shopItemList, Context context) {
         this.context = context;
